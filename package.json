@@ -11,7 +11,8 @@
     "test": "NODE_ENV=test mocha -r ts-node/register --file test/server.spec.ts test/**/*.spec.ts --exit"
   },
   "author": "Jesé Romero Arbelo <jeseromeroarbelo@gmail.com> (http://www.jeseromero.com)",
-  "license": "MIT",
+  "repository": "https://github.com/Linkaynn/node-typescript-mongo",
+  "license": "Apache 2.0",
   "dependencies": {
     "@google-cloud/storage": "^2.3.1",
     "@types/bcrypt-nodejs": "0.0.30",

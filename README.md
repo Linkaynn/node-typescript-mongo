@@ -1,10 +1,10 @@
 # NodeJS + Typescript + MongoDB + Swagger
 
-Quickstart package with nodejs + typescript + [typegoose](https://github.com/szokodiakos/typegoose) + [typescript-rest](https://github.com/thiagobustamante/typescript-rest) + [typescript-rest-swagger](https://github.com/thiagobustamante/typescript-rest-swagger)
+Quick start package with nodejs + typescript + [typegoose](https://github.com/szokodiakos/typegoose) + [typescript-rest](https://github.com/thiagobustamante/typescript-rest) + [typescript-rest-swagger](https://github.com/thiagobustamante/typescript-rest-swagger)
 
 ### Versions
 
-- node@10.0.0 (I recomend use [nvm](https://github.com/creationix/nvm))
+- node@10.0.0 (I recommend use [nvm](https://github.com/creationix/nvm))
 - npm@6.4.1
 - tsc@3.0.3 
 
