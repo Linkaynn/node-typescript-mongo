@@ -1,0 +1,13 @@
+{
+  "ext": "ts",
+  "ignore": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    ".git",
+    "node_modules"
+  ],
+  "watch": [
+    "src"
+  ],
+  "exec": "npm run swagger & node $NODE_DEBUG_OPTION --inspect=0.0.0.0 --require ts-node/register --require tsconfig-paths/register src/nodeServer.ts"
+}

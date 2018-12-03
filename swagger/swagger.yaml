@@ -1,0 +1,244 @@
+basePath: /
+definitions:
+    Answer:
+        description: ""
+        properties:
+            status:
+                type: string
+                description: 'Could be "ok" or "error"'
+            data:
+                type: object
+                properties: {}
+                description: 'Data of the response'
+            errorCode:
+                type: string
+                description: "Only in case of error.\nIdentification of the error."
+            message:
+                type: string
+                description: "Only in case of error.\nMessage associated to the error code."
+            exception:
+                type: object
+                properties: {}
+                description: "Only in case of error.\nException message."
+        type: object
+        required:
+            - status
+            - data
+    User:
+        description: ""
+        properties:
+            _id:
+                type: object
+                description: ""
+            email:
+                type: string
+                description: ""
+            username:
+                type: string
+                description: ""
+            name:
+                type: string
+                description: ""
+            password:
+                type: string
+                description: ""
+            createdDate:
+                type: string
+                format: date-time
+                description: ""
+            updatedDate:
+                type: string
+                format: date-time
+                description: ""
+        type: object
+        required:
+            - email
+            - username
+            - name
+            - createdDate
+            - updatedDate
+    SignUpData:
+        description: ""
+        properties:
+            email:
+                type: string
+                description: ""
+            username:
+                type: string
+                description: ""
+            name:
+                type: string
+                description: ""
+            password:
+                type: string
+                description: ""
+            repeatPassword:
+                type: string
+                description: ""
+        type: object
+        required:
+            - email
+            - username
+            - name
+            - password
+            - repeatPassword
+    SimpleUser:
+        description: ""
+        properties:
+            _id:
+                type: string
+                description: ""
+            email:
+                type: string
+                description: ""
+            username:
+                type: string
+                description: ""
+            name:
+                type: string
+                description: ""
+        type: object
+        required:
+            - _id
+            - email
+            - username
+            - name
+    LoginData:
+        description: ""
+        properties:
+            username:
+                type: string
+                description: ""
+            password:
+                type: string
+                description: ""
+        type: object
+        required:
+            - username
+            - password
+info:
+    description: 'NodeJS with Typescript and MongoDB'
+    license:
+        name: MIT
+    title: node-typescript-mongo
+    version: 0.1.0
+paths:
+    /v1/info/health:
+        get:
+            operationId: InfoHealth
+            produces:
+                - text/json
+            responses:
+                '200':
+                    description: 'Returns OK if everything is fine'
+                    schema:
+                        type: object
+                        properties:
+                            status:
+                                type: string
+                                description: ""
+                            data:
+                                type: string
+                                description: ""
+            description: ""
+            summary: null
+            parameters: []
+    /v1/info:
+        get:
+            operationId: InfoInfo
+            produces:
+                - text/json
+            responses:
+                '200':
+                    description: 'Returns interest data'
+                    schema:
+                        type: object
+                        properties:
+                            status:
+                                type: string
+                                description: ""
+                            data:
+                                type: string
+                                description: ""
+            description: ""
+            summary: null
+            parameters: []
+    /v1/auth/register:
+        put:
+            operationId: AuthNewUser
+            produces:
+                - text/json
+            responses:
+                '200':
+                    description: 'User created'
+                    schema:
+                        type: object
+                        properties:
+                            status:
+                                type: string
+                                description: ""
+                            data:
+                                $ref: '#/definitions/User'
+            description: ""
+            summary: null
+            consumes:
+                - application/json
+            parameters:
+                -
+                    description: ""
+                    in: body
+                    name: _userData
+                    required: true
+                    schema:
+                        $ref: '#/definitions/SignUpData'
+    /v1/auth/login:
+        post:
+            operationId: AuthLogin
+            produces:
+                - text/json
+            responses:
+                '200':
+                    description: 'Login success'
+                    schema:
+                        type: object
+                        properties:
+                            status:
+                                type: string
+                                description: ""
+                            data:
+                                $ref: '#/definitions/SimpleUser'
+            description: ""
+            summary: null
+            consumes:
+                - application/json
+            parameters:
+                -
+                    description: ""
+                    in: body
+                    name: _loginData
+                    required: true
+                    schema:
+                        $ref: '#/definitions/LoginData'
+    /v1/auth/logout:
+        get:
+            operationId: AuthLogout
+            produces:
+                - text/json
+            responses:
+                '200':
+                    description: 'Logout success'
+                    schema:
+                        type: object
+                        properties:
+                            status:
+                                type: string
+                                description: ""
+                            data:
+                                type: string
+                                description: ""
+            description: ""
+            summary: null
+            parameters: []
+swagger: '2.0'
+securityDefinitions: {}
+host: 'localhost:8080'

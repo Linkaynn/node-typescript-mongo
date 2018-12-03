@@ -1,6 +1,6 @@
-# Node + Typescript + MongoDB
+# NodeJS + Typescript + MongoDB + Swagger
 
-Quickstart package with nodejs + typescript + [typegoose](https://github.com/szokodiakos/typegoose) + [typescript-rest](https://github.com/thiagobustamante/typescript-rest)
+Quickstart package with nodejs + typescript + [typegoose](https://github.com/szokodiakos/typegoose) + [typescript-rest](https://github.com/thiagobustamante/typescript-rest) + [typescript-rest-swagger](https://github.com/thiagobustamante/typescript-rest-swagger)
 
 ### Versions
 

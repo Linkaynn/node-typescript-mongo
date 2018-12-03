@@ -1,0 +1,8 @@
+{
+  "swagger": {
+    "host": "localhost:8080",
+    "basePath": "/",
+    "outputDirectory": "./swagger",
+    "entryFile": "./src/controllers/index.ts"
+  }
+}
